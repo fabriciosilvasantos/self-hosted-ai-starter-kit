@@ -25,6 +25,8 @@ store with an comprehensive API
 ✅ [**PostgreSQL**](https://www.postgresql.org/) -  Workhorse of the Data
 Engineering world, handles large amounts of data safely.
 
+✅ [**Open WebUI**](https://github.com/open-webui/open-webui) - User-friendly web interface for interacting with local LLMs through Ollama
+
 ### What you can build
 
 ⭐️ **AI Agents** for scheduling appointments
@@ -40,7 +42,7 @@ Engineering world, handles large amounts of data safely.
 ### Cloning the Repository
 
 ```bash
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
+git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
 cp .env.example .env # you should update secrets and passwords inside
 ```
@@ -50,7 +52,7 @@ cp .env.example .env # you should update secrets and passwords inside
 #### For Nvidia GPU users
 
 ```bash
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
+git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
 cp .env.example .env # you should update secrets and passwords inside
 docker compose --profile gpu-nvidia up
@@ -63,7 +65,7 @@ docker compose --profile gpu-nvidia up
 ### For AMD GPU users on Linux
 
 ```bash
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
+git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
 cp .env.example .env # you should update secrets and passwords inside
 docker compose --profile gpu-amd up
@@ -84,7 +86,7 @@ If you want to run Ollama on your mac, check the
 for installation instructions, and run the starter kit as follows:
 
 ```bash
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
+git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
 cp .env.example .env # you should update secrets and passwords inside
 docker compose up
@@ -104,7 +106,7 @@ If you're running OLLAMA locally on your Mac (not in Docker), you need to modify
 #### For everyone else
 
 ```bash
-git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
+git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
 cp .env.example .env # you should update secrets and passwords inside
 docker compose --profile cpu up
