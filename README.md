@@ -1,237 +1,191 @@
-# Self-hosted AI starter kit
+# Kit de Início para IA Auto-hospedada
 
-**Self-hosted AI Starter Kit** is an open-source Docker Compose template designed to swiftly initialize a comprehensive local AI and low-code development environment.
+**Self-hosted AI Starter Kit** é um modelo de Docker Compose de código aberto projetado para inicializar rapidamente um ambiente abrangente de desenvolvimento de IA e low-code local.
 
-![n8n.io - Screenshot](https://raw.githubusercontent.com/n8n-io/self-hosted-ai-starter-kit/main/assets/n8n-demo.gif)
+![n8n.io - Captura de Tela](https://raw.githubusercontent.com/n8n-io/self-hosted-ai-starter-kit/main/assets/n8n-demo.gif)
 
-Curated by <https://github.com/n8n-io>, it combines the self-hosted n8n
-platform with a curated list of compatible AI products and components to
-quickly get started with building self-hosted AI workflows.
+Criado por <https://github.com/n8n-io>, ele combina a plataforma n8n auto-hospedada com uma lista selecionada de produtos e componentes de IA compatíveis para começar rapidamente a criar fluxos de trabalho de IA auto-hospedados.
 
-> [!TIP]
-> [Read the announcement](https://blog.n8n.io/self-hosted-ai/)
+> [!DICA]
+> [Leia o anúncio](https://blog.n8n.io/self-hosted-ai/)
 
-### What’s included
+### O que está incluído
 
-✅ [**Self-hosted n8n**](https://n8n.io/) - Low-code platform with over 400
-integrations and advanced AI components
+✅ [**n8n auto-hospedado**](https://n8n.io/) - Plataforma low-code com mais de 400 integrações e componentes avançados de IA
 
-✅ [**Ollama**](https://ollama.com/) - Cross-platform LLM platform to install
-and run the latest local LLMs
+✅ [**Ollama**](https://ollama.com/) - Plataforma LLM multiplataforma para instalar e executar os mais recentes modelos de linguagem locais
 
-✅ [**Qdrant**](https://qdrant.tech/) - Open-source, high performance vector
-store with an comprehensive API
+✅ [**Qdrant**](https://qdrant.tech/) - Armazenamento vetorial de alto desempenho com uma API abrangente
 
-✅ [**PostgreSQL**](https://www.postgresql.org/) -  Workhorse of the Data
-Engineering world, handles large amounts of data safely.
+✅ [**PostgreSQL**](https://www.postgresql.org/) - O cavalo de batalha do mundo de Engenharia de Dados, lida com grandes quantidades de dados com segurança.
 
-✅ [**Open WebUI**](https://github.com/open-webui/open-webui) - User-friendly web interface for interacting with local LLMs through Ollama
+✅ [**Open WebUI**](https://github.com/open-webui/open-webui) - Interface web amigável para interagir com LLMs locais através do Ollama
 
-### What you can build
+### O que você pode construir
 
-⭐️ **AI Agents** for scheduling appointments
+⭐️ **Agentes de IA** para agendamento de compromissos
 
-⭐️ **Summarize Company PDFs** securely without data leaks
+⭐️ **Resumir PDFs da Empresa** com segurança sem vazamento de dados
 
-⭐️ **Smarter Slack Bots** for enhanced company communications and IT operations
+⭐️ **Bots do Slack mais inteligentes** para melhorar as comunicações e operações de TI da empresa
 
-⭐️ **Private Financial Document Analysis** at minimal cost
+⭐️ **Análise de Documentos Financeiros Privados** com custo mínimo
 
-## Installation
+## Instalação
 
-### Cloning the Repository
+### Clonando o Repositório
 
 ```bash
 git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
-cp .env.example .env # you should update secrets and passwords inside
+cp .env.example .env # você deve atualizar os segredos e senhas dentro
 ```
 
-### Running n8n using Docker Compose
+### Executando n8n usando Docker Compose
 
-#### For Nvidia GPU users
+#### Para usuários com GPU Nvidia
 
 ```bash
 git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
-cp .env.example .env # you should update secrets and passwords inside
+cp .env.example .env # você deve atualizar os segredos e senhas dentro
 docker compose --profile gpu-nvidia up
 ```
 
-> [!NOTE]
-> If you have not used your Nvidia GPU with Docker before, please follow the
-> [Ollama Docker instructions](https://github.com/ollama/ollama/blob/main/docs/docker.md).
+> [!NOTA]
+> Se você nunca usou sua GPU Nvidia com o Docker antes, siga as
+> [instruções do Docker da Ollama](https://github.com/ollama/ollama/blob/main/docs/docker.md).
 
-### For AMD GPU users on Linux
+### Para usuários com GPU AMD no Linux
 
 ```bash
 git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
-cp .env.example .env # you should update secrets and passwords inside
+cp .env.example .env # você deve atualizar os segredos e senhas dentro
 docker compose --profile gpu-amd up
 ```
 
-#### For Mac / Apple Silicon users
+#### Para usuários de Mac / Apple Silicon
 
-If you’re using a Mac with an M1 or newer processor, you can't expose your GPU
-to the Docker instance, unfortunately. There are two options in this case:
+Se você estiver usando um Mac com processador M1 ou mais recente, infelizmente não é possível expor sua GPU para a instância do Docker. Existem duas opções neste caso:
 
-1. Run the starter kit fully on CPU, like in the section "For everyone else"
-   below
-2. Run Ollama on your Mac for faster inference, and connect to that from the
-   n8n instance
+1. Execute o kit de início totalmente na CPU, como na seção "Para todos os outros" abaixo
+2. Execute o Ollama no seu Mac para inferência mais rápida e conecte-se a ele a partir da instância do n8n
 
-If you want to run Ollama on your mac, check the
-[Ollama homepage](https://ollama.com/)
-for installation instructions, and run the starter kit as follows:
+Se você quiser executar o Ollama no seu Mac, verifique a [página inicial do Ollama](https://ollama.com/) para obter instruções de instalação e execute o kit de início da seguinte forma:
 
 ```bash
 git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
-cp .env.example .env # you should update secrets and passwords inside
+cp .env.example .env # você deve atualizar os segredos e senhas dentro
 docker compose up
 ```
 
-##### For Mac users running OLLAMA locally
+##### Para usuários de Mac executando OLLAMA localmente
 
-If you're running OLLAMA locally on your Mac (not in Docker), you need to modify the OLLAMA_HOST environment variable
+Se você estiver executando o OLLAMA localmente no seu Mac (não no Docker), você precisa modificar a variável de ambiente OLLAMA_HOST
 
-1. Set OLLAMA_HOST to `host.docker.internal:11434` in your .env file. 
-2. Additionally, after you see "Editor is now accessible via: <http://localhost:5678/>":
+1. Defina OLLAMA_HOST como `host.docker.internal:11434` no seu arquivo .env.
+2. Além disso, depois de ver "Editor is now accessible via: <http://localhost:5678/>":
 
-    1. Head to <http://localhost:5678/home/credentials>
-    2. Click on "Local Ollama service"
-    3. Change the base URL to "http://host.docker.internal:11434/"
+    1. Acesse <http://localhost:5678/home/credentials>
+    2. Clique em "Local Ollama service"
+    3. Altere a URL base para "http://host.docker.internal:11434/"
 
-#### For everyone else
+#### Para todos os outros
 
 ```bash
 git clone https://github.com/fabriciosilvasantos/self-hosted-ai-starter-kit.git
 cd self-hosted-ai-starter-kit
-cp .env.example .env # you should update secrets and passwords inside
+cp .env.example .env # você deve atualizar os segredos e senhas dentro
 docker compose --profile cpu up
 ```
 
-## ⚡️ Quick start and usage
+## ⚡️ Início rápido e uso
 
-The core of the Self-hosted AI Starter Kit is a Docker Compose file, pre-configured with network and storage settings, minimizing the need for additional installations.
-After completing the installation steps above, simply follow the steps below to get started.
+O núcleo do Self-hosted AI Starter Kit é um arquivo Docker Compose, pré-configurado com configurações de rede e armazenamento, minimizando a necessidade de instalações adicionais.
+Após concluir as etapas de instalação acima, basta seguir as etapas abaixo para começar.
 
-1. Open <http://localhost:5678/> in your browser to set up n8n. You’ll only
-   have to do this once.
-2. Open the included workflow:
-   <http://localhost:5678/workflow/srOnR8PAY3u4RSwb>
-3. Click the **Chat** button at the bottom of the canvas, to start running the workflow.
-4. If this is the first time you’re running the workflow, you may need to wait
-   until Ollama finishes downloading Llama3.2. You can inspect the docker
-   console logs to check on the progress.
+1. Abra <http://localhost:5678/> no seu navegador para configurar o n8n. Você só precisará fazer isso uma vez.
+2. Abra o fluxo de trabalho incluído: <http://localhost:5678/workflow/srOnR8PAY3u4RSwb>
+3. Clique no botão **Chat** na parte inferior da tela para começar a executar o fluxo de trabalho.
+4. Se esta for a primeira vez que você executa o fluxo de trabalho, pode ser necessário aguardar até que o Ollama termine de baixar o Llama3.2. Você pode inspecionar os logs do console do docker para verificar o progresso.
 
-To open n8n at any time, visit <http://localhost:5678/> in your browser.
+Para abrir o n8n a qualquer momento, visite <http://localhost:5678/> no seu navegador.
 
-With your n8n instance, you’ll have access to over 400 integrations and a
-suite of basic and advanced AI nodes such as
-[AI Agent](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/),
-[Text classifier](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.text-classifier/),
-and [Information Extractor](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.information-extractor/)
-nodes. To keep everything local, just remember to use the Ollama node for your
-language model and Qdrant as your vector store.
+Com sua instância do n8n, você terá acesso a mais de 400 integrações e um conjunto de nós de IA básicos e avançados, como [Agente de IA](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/), [Classificador de Texto](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.text-classifier/) e [Extrator de Informações](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.information-extractor/). Para manter tudo local, lembre-se de usar o nó Ollama para seu modelo de linguagem e Qdrant como seu armazenamento vetorial.
 
-> [!NOTE]
-> This starter kit is designed to help you get started with self-hosted AI
-> workflows. While it’s not fully optimized for production environments, it
-> combines robust components that work well together for proof-of-concept
-> projects. You can customize it to meet your specific needs
+> [!NOTA]
+> Este kit de início foi projetado para ajudá-lo a começar com fluxos de trabalho de IA auto-hospedados. Embora não seja totalmente otimizado para ambientes de produção, ele combina componentes robustos que funcionam bem juntos para projetos de prova de conceito. Você pode personalizá-lo para atender às suas necessidades específicas.
 
-## Upgrading
+## Atualização
 
-* ### For Nvidia GPU setups:
+* ### Para configurações com GPU Nvidia:
 
 ```bash
 docker compose --profile gpu-nvidia pull
 docker compose create && docker compose --profile gpu-nvidia up
 ```
 
-* ### For Mac / Apple Silicon users
+* ### Para usuários de Mac / Apple Silicon
 
 ```bash
 docker compose pull
 docker compose create && docker compose up
 ```
 
-* ### For Non-GPU setups:
+* ### Para configurações sem GPU:
 
 ```bash
 docker compose --profile cpu pull
 docker compose create && docker compose --profile cpu up
 ```
 
-## 👓 Recommended reading
+## 👓 Leitura recomendada
 
-n8n is full of useful content for getting started quickly with its AI concepts
-and nodes. If you run into an issue, go to [support](#support).
+O n8n está repleto de conteúdo útil para começar rapidamente com seus conceitos e nós de IA. Se você encontrar algum problema, vá para [suporte](#suporte).
 
-- [AI agents for developers: from theory to practice with n8n](https://blog.n8n.io/ai-agents/)
-- [Tutorial: Build an AI workflow in n8n](https://docs.n8n.io/advanced-ai/intro-tutorial/)
-- [Langchain Concepts in n8n](https://docs.n8n.io/advanced-ai/langchain/langchain-n8n/)
-- [Demonstration of key differences between agents and chains](https://docs.n8n.io/advanced-ai/examples/agent-chain-comparison/)
-- [What are vector databases?](https://docs.n8n.io/advanced-ai/examples/understand-vector-databases/)
+- [Agentes de IA para desenvolvedores: da teoria à prática com n8n](https://blog.n8n.io/ai-agents/)
+- [Tutorial: Crie um fluxo de trabalho de IA no n8n](https://docs.n8n.io/advanced-ai/intro-tutorial/)
+- [Conceitos de Langchain no n8n](https://docs.n8n.io/advanced-ai/langchain/langchain-n8n/)
+- [Demonstração das principais diferenças entre agentes e cadeias](https://docs.n8n.io/advanced-ai/examples/agent-chain-comparison/)
+- [O que são bancos de dados vetoriais?](https://docs.n8n.io/advanced-ai/examples/understand-vector-databases/)
 
-## 🎥 Video walkthrough
+## 🎥 Demonstração em vídeo
 
-- [Installing and using Local AI for n8n](https://www.youtube.com/watch?v=xz_X2N-hPg0)
+- [Instalando e usando IA Local para n8n](https://www.youtube.com/watch?v=xz_X2N-hPg0)
 
-## 🛍️ More AI templates
+## 🛍️ Mais modelos de IA
 
-For more AI workflow ideas, visit the [**official n8n AI template
-gallery**](https://n8n.io/workflows/categories/ai/). From each workflow,
-select the **Use workflow** button to automatically import the workflow into
-your local n8n instance.
+Para mais ideias de fluxos de trabalho de IA, visite a [galeria oficial de modelos de IA do n8n](https://n8n.io/workflows/categories/ai/). Em cada fluxo de trabalho, selecione o botão **Usar fluxo de trabalho** para importar automaticamente o fluxo de trabalho para sua instância local do n8n.
 
-### Learn AI key concepts
+### Modelos de IA local
 
-- [AI Agent Chat](https://n8n.io/workflows/1954-ai-agent-chat/)
-- [AI chat with any data source (using the n8n workflow too)](https://n8n.io/workflows/2026-ai-chat-with-any-data-source-using-the-n8n-workflow-tool/)
-- [Chat with OpenAI Assistant (by adding a memory)](https://n8n.io/workflows/2098-chat-with-openai-assistant-by-adding-a-memory/)
-- [Use an open-source LLM (via Hugging Face)](https://n8n.io/workflows/1980-use-an-open-source-llm-via-huggingface/)
-- [Chat with PDF docs using AI (quoting sources)](https://n8n.io/workflows/2165-chat-with-pdf-docs-using-ai-quoting-sources/)
-- [AI agent that can scrape webpages](https://n8n.io/workflows/2006-ai-agent-that-can-scrape-webpages/)
+- [Assistente de Código Tributário](https://n8n.io/workflows/2341-build-a-tax-code-assistant-with-qdrant-mistralai-and-openai/)
+- [Dividir Documentos em Notas de Estudo com MistralAI e Qdrant](https://n8n.io/workflows/2339-breakdown-documents-into-study-notes-using-templating-mistralai-and-qdrant/)
+- [Assistente de Documentos Financeiros usando Qdrant e Mistral.ai](https://n8n.io/workflows/2335-build-a-financial-documents-assistant-using-qdrant-and-mistralai/)
+- [Recomendações de Receitas com Qdrant e Mistral](https://n8n.io/workflows/2333-recipe-recommendations-with-qdrant-and-mistral/)
 
-### Local AI templates
+## Dicas e truques
 
-- [Tax Code Assistant](https://n8n.io/workflows/2341-build-a-tax-code-assistant-with-qdrant-mistralai-and-openai/)
-- [Breakdown Documents into Study Notes with MistralAI and Qdrant](https://n8n.io/workflows/2339-breakdown-documents-into-study-notes-using-templating-mistralai-and-qdrant/)
-- [Financial Documents Assistant using Qdrant and](https://n8n.io/workflows/2335-build-a-financial-documents-assistant-using-qdrant-and-mistralai/) [Mistral.ai](http://mistral.ai/)
-- [Recipe Recommendations with Qdrant and Mistral](https://n8n.io/workflows/2333-recipe-recommendations-with-qdrant-and-mistral/)
+### Acessando arquivos locais
 
-## Tips & tricks
+O kit de início de IA auto-hospedada criará uma pasta compartilhada (por padrão, localizada no mesmo diretório) que é montada no contêiner n8n e permite que o n8n acesse arquivos em disco. Esta pasta dentro do contêiner n8n está localizada em `/data/shared` - este é o caminho que você precisará usar em nós que interagem com o sistema de arquivos local.
 
-### Accessing local files
+**Nós que interagem com o sistema de arquivos local**
 
-The self-hosted AI starter kit will create a shared folder (by default,
-located in the same directory) which is mounted to the n8n container and
-allows n8n to access files on disk. This folder within the n8n container is
-located at `/data/shared` -- this is the path you’ll need to use in nodes that
-interact with the local filesystem.
+- [Ler/Escrever Arquivos do Disco](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.filesreadwrite/)
+- [Gatilho de Arquivo Local](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.localfiletrigger/)
+- [Executar Comando](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executecommand/)
 
-**Nodes that interact with the local filesystem**
+## 📜 Licença
 
-- [Read/Write Files from Disk](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.filesreadwrite/)
-- [Local File Trigger](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.localfiletrigger/)
-- [Execute Command](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executecommand/)
+Este projeto está licenciado sob a Licença Apache 2.0 - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
-## 📜 License
+## 💬 Suporte
 
-This project is licensed under the Apache License 2.0 - see the
-[LICENSE](LICENSE) file for details.
+Participe da conversa no [Fórum do n8n](https://community.n8n.io/), onde você pode:
 
-## 💬 Support
-
-Join the conversation in the [n8n Forum](https://community.n8n.io/), where you
-can:
-
-- **Share Your Work**: Show off what you’ve built with n8n and inspire others
-  in the community.
-- **Ask Questions**: Whether you’re just getting started or you’re a seasoned
-  pro, the community and our team are ready to support with any challenges.
-- **Propose Ideas**: Have an idea for a feature or improvement? Let us know!
-  We’re always eager to hear what you’d like to see next.
+- **Compartilhar Seu Trabalho**: Mostre o que você construiu com o n8n e inspire outras pessoas na comunidade.
+- **Fazer Perguntas**: Seja você um iniciante ou um profissional experiente, a comunidade e nossa equipe estão prontas para ajudar com quaisquer desafios.
+- **Propor Ideias**: Tem uma ideia para um recurso ou melhoria? Conte para nós! Estamos sempre ansiosos para ouvir o que você gostaria de ver em seguida.
