@@ -123,6 +123,11 @@ services:
     depends_on:
       - ollama
 
+  # Serviço Ollama principal (sem perfil)
+  ollama:
+    <<: *service-ollama
+
+  # Serviços com perfis específicos
   ollama-cpu:
     profiles: ["cpu"]
     <<: *service-ollama
